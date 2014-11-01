@@ -1,3 +1,10 @@
+Test Driven Development (TDD) Example
+
+Write a function in Python 3 that returns the largest factor of a number
+without importing any libraries except pytest.
+
+Installation:
+
 tmux
 # divide into multiple panes
 
@@ -10,8 +17,10 @@ pip install pytest-xdist
 pip freeze >requirements.txt
 git init
 git ci --allow-empty -m 'Start with empty commit.'
+# Now do a mix of vi, git add, git commit -m, and git status commands.
 
 # pane 1
+# This pane shows results of tests that are run each time a file is changed.
 source env/bin/activate
 py.test -f .
 
