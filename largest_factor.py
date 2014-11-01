@@ -1,7 +1,9 @@
 import pytest
 
 def largest_factor(x):
-    if x <= 1 or divmod(x, 1)[1] != 0:
+    if x <= 1:
+        raise ValueError
+    if x % 1 != 0:
         raise ValueError
 
     divisor = 2
