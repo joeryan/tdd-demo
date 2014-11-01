@@ -1,44 +1,34 @@
 import pytest
+
 from largest_factor import largest_factor
 
-def test_largest_factor_2():
-    assert largest_factor(2) == 2
+number_to_largest_prime_factor = {
+    2: 2,
+    3: 3,
+    5: 5,
+    2**2 * 13: 13,
+    2**3 * 3**2: 3,
+    5*7*11: 11,
+    5*7*11*11: 11,
+    2**100: 2,
+}
+@pytest.mark.parametrize('number, expected_largest_prime_factor', number_to_largest_prime_factor.items())
+def test_known_number_returns_expected(number, expected_largest_prime_factor):
+    assert expected_largest_prime_factor == largest_factor(number) 
 
-def test_largest_factor_3():
-    assert largest_factor(3) == 3
+bad_values_to_expected_error = {
+    -1: ValueError,
+    0: ValueError,
+    1: ValueError,
+    3.1415926: ValueError,
+    'hello': TypeError,
+}
+@pytest.mark.parametrize('value, expected_error', bad_values_to_expected_error.items())
+def test_known_value_returns_expected_error(value, expected_error):
+    # Rendundant tests show alternate syntax.
 
-def test_largest_factor_5():
-    assert largest_factor(5) == 5
+    with pytest.raises(expected_error):
+        largest_factor(value)
 
-def test_largest_factor_52():
-    assert largest_factor(52) == 13
-
-def test_largest_factor_72():
-    assert largest_factor(72) == 3
-
-def test_largest_factor_5_7_11():
-    assert largest_factor(5*7*11) == 11
-
-def test_largest_factor_5_7_11_11():
-    assert largest_factor(5*7*11*11) == 11
-
-def test_largest_factor_minus1():
-    with pytest.raises(ValueError):
-        largest_factor(-1)
-
-def test_largest_factor_0():
-    with pytest.raises(ValueError):
-        largest_factor(0)
-
-def test_largest_factor_1():
-    with pytest.raises(ValueError):
-        largest_factor(1)
-
-def test_largest_factor_pi():
-    with pytest.raises(ValueError):
-        largest_factor(3.1415926)
-
-def test_largest_factor_hello():
-    with pytest.raises(TypeError):
-        largest_factor('hello')
-
+    # older syntax works with 2.4
+    pytest.raises(expected_error, "largest_factor(value)")
