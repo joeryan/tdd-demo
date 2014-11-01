@@ -17,7 +17,6 @@ pip install pytest-xdist
 pip freeze >requirements.txt
 git init
 git ci --allow-empty -m 'Start with empty commit.'
-# Now do a mix of vi, git add, git commit -m, and git status commands.
 
 # pane 1
 # This pane shows results of tests that are run each time a file is changed.
@@ -27,3 +26,5 @@ py.test -f .
 # pane 2
 watch 'git status'
 
+# pane 0:
+# Now do a mix of vi, git add, git commit, and git status commands.
