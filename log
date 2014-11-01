@@ -1,0 +1,20 @@
+tmux
+# divide into multiple panes
+
+# pane 0:
+virtualenv env -p `which python3`
+source env/bin/activate
+pip freeze >requirements.original
+pip install pytest
+pip install pytest-xdist
+pip freeze >requirements.txt
+git init
+git ci --allow-empty -m 'Start with empty commit.'
+
+# pane 1
+source env/bin/activate
+py.test -f .
+
+# pane 2
+watch 'git status'
+
