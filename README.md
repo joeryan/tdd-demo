@@ -22,6 +22,7 @@ Python 3 with the following packages
 
 ## Setup
 
+```
 tmux
 # divide into multiple panes
 
@@ -45,3 +46,4 @@ watch 'git status'
 
 # pane 0:
 # Now do a mix of vi, git add, git commit, and git status commands.
+```
