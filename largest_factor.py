@@ -3,7 +3,7 @@ import pytest
 def largest_factor(x):
     if x <= 1:
         raise ValueError
-    if x % 1 != 0:
+    if x != int(x):
         raise ValueError
 
     divisor = 2
