@@ -8,11 +8,9 @@ without importing any libraries except pytest.
 
 The following is how I did a beginning TDD demo in Python from scratch.
 
-Dependencies
-------------
-
 ## Dependencies
 
+```
 tmux
 git
 Python 3 with the following packages
@@ -20,9 +18,9 @@ Python 3 with the following packages
 - py==1.4.26
 - pytest==2.6.4
 - pytest-xdist==1.11
+```
 
-Setup
------
+## Setup
 
 tmux
 # divide into multiple panes
