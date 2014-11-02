@@ -8,6 +8,16 @@ without importing any libraries except pytest.
 
 The following is how I did a beginning TDD demo in Python from scratch.
 
+The order of the TDD stuff was roughly:
+- (930e0c5) Started by creating many separate tests.
+- (a3edc9d) Created a stub function to make tests fail.
+- (610a0c5) Put meat in the function to make all the tests pass.
+- (bae7a0b) Refactored the function in.
+
+In adca93f, the tests were refactored to use @pytest.mark.parametrize() to
+consolidate the many small tests into a test data dictionaries and a few test
+functions.
+
 ## Dependencies
 
 ```
