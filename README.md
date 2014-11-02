@@ -11,13 +11,15 @@ The following is how I did a beginning TDD demo in Python from scratch.
 Dependencies
 ------------
 
+## Dependencies
+
 tmux
 git
 Python 3 with the following packages
-    execnet==1.2.0
-    py==1.4.26
-    pytest==2.6.4
-    pytest-xdist==1.11
+- execnet==1.2.0
+- py==1.4.26
+- pytest==2.6.4
+- pytest-xdist==1.11
 
 Setup
 -----
